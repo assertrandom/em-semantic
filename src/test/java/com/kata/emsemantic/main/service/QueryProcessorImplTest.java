@@ -32,4 +32,16 @@ public class QueryProcessorImplTest {
         assertEquals(null, parsedText);
 
     }
+
+    @Test
+    public void testQueryDBPediaForValidEntry() throws Exception {
+        String response = queryProcessor.queryDBPedia("David Cameron");
+        assertEquals("London, England, U.K.", response);
+    }
+
+    @Test
+    public void testQueryDBPediaForInvalidEntry() throws Exception {
+        String response = queryProcessor.queryDBPedia("Rafter Simpleton");
+        assertEquals(null, response);
+    }
 }

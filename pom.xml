@@ -16,6 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <commons.configuration>1.10</commons.configuration>
         <commons.lang>2.6</commons.lang>
+        <jena.version>2.13.0</jena.version>
     </properties>
     <dependencies>
         <dependency>
@@ -38,6 +39,11 @@
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>${commons.lang}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>apache-jena-libs</artifactId>
+            <version>${jena.version}</version>
         </dependency>
     </dependencies>
     <build>
