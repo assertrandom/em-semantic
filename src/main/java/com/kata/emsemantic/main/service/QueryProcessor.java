@@ -7,5 +7,7 @@ public interface  QueryProcessor {
 
     String parseUserInput(String userInput);
 
-    String queryDBPedia(String parsedFullName);
+    String processUserInputName(String userInput);
+
+    String queryDbpedia(String parsedFullName);
 }

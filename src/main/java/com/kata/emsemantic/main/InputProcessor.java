@@ -1,8 +1,6 @@
 package com.kata.emsemantic.main;
 
-import com.kata.emsemantic.main.service.QueryProcessor;
 import com.kata.emsemantic.main.service.QueryProcessorImpl;
-import org.apache.commons.lang.StringUtils;
 
 import java.util.Scanner;
 
@@ -11,24 +9,34 @@ import java.util.Scanner;
  */
 public class InputProcessor {
 
+    QueryProcessorImpl queryProcessor  = new QueryProcessorImpl();
+
     public static void main(String[] args) {
 
-        QueryProcessor queryProcessor  = new QueryProcessorImpl();
-        String userInput = "";
+        InputProcessor inputProcessor = new InputProcessor();
+        inputProcessor.runInteractiveTerminal();
+    }
+
+
+    private void runInteractiveTerminal() {
+        System.out.println("Program to fetch the birth place of famous people.");
+        System.out.println("Enter 'help' to show sample queries:");
+
+
+        String userInput = fetchUserInput();
+
         while (!userInput.equalsIgnoreCase("exit")) {
-            System.out.println("Enter the question (Enter 'exit' to Exit the program )   :: ");
-            Scanner in = new Scanner(System.in);
-            userInput = in.nextLine();
-            String parsedFullName = queryProcessor.parseUserInput(userInput);
-            if (StringUtils.isBlank(parsedFullName)) {
-                System.out.println("Unable to parse the query");
-            } else {
-                String birthPlace = queryProcessor.queryDBPedia(parsedFullName);
-                System.out.println(birthPlace);
-            }
+            System.out.println(queryProcessor.processUserInputName(userInput));
+            userInput = fetchUserInput();
 
         }
+    }
 
 
+
+    private String fetchUserInput() {
+        Scanner inputScanner = new Scanner(System.in);
+        System.out.println("Enter the question (Enter 'exit' to Exit the program )   :: ");
+        return  inputScanner.nextLine();
     }
 }
