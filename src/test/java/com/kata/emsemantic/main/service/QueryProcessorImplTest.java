@@ -13,8 +13,23 @@ public class QueryProcessorImplTest {
 
     @Test
     public void testParseUserValidInput() throws Exception {
-        String parsedText = queryProcessor.parseUserInput("What is the birth place of David Cameron ?");
+        String parsedText = queryProcessor.parseUserInput("What is the birth place of David Cameron?");
         assertEquals("David Cameron", parsedText);
+
+    }
+
+    @Test
+    public void testParseUserValidInputWithSpaces() throws Exception {
+        String parsedText = queryProcessor.parseUserInput("What is the birth place of   Tony Blair  ?");
+        assertEquals("Tony Blair", parsedText);
+
+    }
+
+
+    @Test
+    public void testParseUserInvalidInput() throws Exception {
+        String parsedText = queryProcessor.parseUserInput("What is the birth place David Cameron  ?");
+        assertEquals(null, parsedText);
 
     }
 }
