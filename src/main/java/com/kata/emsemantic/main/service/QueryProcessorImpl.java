@@ -38,4 +38,9 @@ public class QueryProcessorImpl implements  QueryProcessor {
         return null;
 
     }
+
+    @Override
+    public String queryDBPedia(String parsedFullName) {
+        return null;
+    }
 }
