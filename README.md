@@ -3,6 +3,15 @@
 
 Simple project to fire a query against DbPedia and get the birth place of person.
 
+
+###Execution 
+
+```sh
+java com.kata.emsemantic.main.InputProcessor
+```
+
+
+
 Things to-do
 
 -Add proper logger rather than System out 
