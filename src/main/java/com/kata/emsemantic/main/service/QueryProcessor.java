@@ -5,6 +5,6 @@ package com.kata.emsemantic.main.service;
  */
 public interface  QueryProcessor {
 
-    String parseUserInput(String inputString);
+    String parseUserInput(String userInput);
 
 }

@@ -13,12 +13,12 @@ public class InputProcessor {
     public static void main(String[] args) {
 
         QueryProcessor queryProcessor  = new QueryProcessorImpl();
-        String inputString = "";
-        while (!inputString.equalsIgnoreCase("exit")) {
+        String userInput = "";
+        while (!userInput.equalsIgnoreCase("exit")) {
             System.out.println("Enter the question (Enter 'exit' to Exit the program )   :: ");
             Scanner in = new Scanner(System.in);
-            inputString = in.nextLine();
-            String parsedFullName = queryProcessor.parseUserInput(inputString);
+            userInput = in.nextLine();
+            String parsedFullName = queryProcessor.parseUserInput(userInput);
 
         }
 
